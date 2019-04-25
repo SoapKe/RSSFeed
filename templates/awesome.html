@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+<head>
+    <meta charset="UTF-8">
+    <title>RSS Feed from 9GAG - Awesome</title>
+</head>
+
+
+<body>
+    <h1><a href="/">RSS Feed from 9GAG</a> - Awesome</h1>
+    <!--<div>{{data}}</div>-->
+    <hr />
+    <p>
+        <a href="awesome">Awesome</a>
+        <a href="comic">Comic</a>
+        <a href="funny">Funny</a>
+        <a href="hot">Hot</a>
+    <hr />
+    <div>
+        {% for n in data %}
+            <h3><a href={{n["link"]}}>{{n["title"]}}</a></h3>
+
+            <p>{{n["summary"] | safe}}</p>
+            <hr />
+        {% endfor %}
+    </div>
+
+</body>
+
+
+</html>
